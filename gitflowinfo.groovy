@@ -1,4 +1,4 @@
-pipelineJob("item1") {
+job("item1") {
 	description()
 	keepDependencies(false)
 	parameters {
