@@ -9,6 +9,7 @@ properties([
                      selectedValue: 'NONE',
                      sortMode: 'NONE',
                      tagFilter: '*',
+                     useRepository: 'https://github.com/EugeneKalashnikov/DockerBuilds.git',
                      type: 'PT_BRANCH')
     ])
 ])
