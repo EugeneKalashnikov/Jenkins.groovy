@@ -14,10 +14,10 @@ properties([
           sandbox: false, 
           script: 
           '''
-          def gettags = ("git ls-remote -t -h https://github.com/EugeneKalashnikov/DockerBuilds.git").execute()
-          return gettags.text.readLines().collect { 
-             it.split()[1].replaceAll('refs/heads/', '').replaceAll('refs/tags/', '').replaceAll('\\^\\{\\}+', '')
-          }
+def gettags = ("git ls-remote -t -h https://github.com/EugeneKalashnikov/DockerBuilds.git").execute()
+return gettags.text.readLines().collect { 
+  it.split()[1].replaceAll('refs/heads/', '').replaceAll('refs/tags/', '').replaceAll('/^/{/}+', '')
+}
           '''
         ]
       ]
