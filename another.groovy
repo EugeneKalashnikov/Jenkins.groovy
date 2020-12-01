@@ -1,4 +1,4 @@
-def repourl = 'https://github.com/EugeneKalashnikov/DockerBuilds.git'
+
 properties([
     parameters([
         gitParameter(branch: '',
@@ -27,7 +27,7 @@ pipeline {
                           extensions: [], 
                           gitTool: 'Default', 
                           submoduleCfg: [], 
-                          userRemoteConfigs: [[url: "${repourl}"]]]
+                          userRemoteConfigs: [[url: 'https://github.com/EugeneKalashnikov/DockerBuilds.git']]]
                         ])
             }
         }
