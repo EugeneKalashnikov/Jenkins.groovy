@@ -1,3 +1,4 @@
+def repourl = 'https://github.com/EugeneKalashnikov/DockerBuilds.git'
 properties([
     parameters([
         gitParameter(branch: '',
@@ -9,10 +10,10 @@ properties([
                      selectedValue: 'NONE',
                      sortMode: 'NONE',
                      tagFilter: '*',
-                     useRepository: 'https://github.com/EugeneKalashnikov/DockerBuilds.git',
+                     useRepository: repourl,
                      type: 'PT_BRANCH')
     ])
 ])
 node {
-    git branch: "${params.BRANCH}", url: 'https://github.com/EugeneKalashnikov/DockerBuilds.git'
+    git branch: "${params.BRANCH}", url: repourl
 }
