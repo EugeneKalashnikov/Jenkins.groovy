@@ -8,6 +8,7 @@ properties([
       filterable: false,
       name: 'Environment', 
       script: [
+        $class: 'GroovyScript', 
         script: [
           classpath: [], 
           sandbox: false, 
@@ -30,12 +31,12 @@ properties([
           sandbox: false, 
           script: 
             '''if (Environment.equals("Development")){
-    def command = $/ssh centos@192.168.1.101 sudo ls /var/www/html /$
+    def command = $/ssh tech@192.168.1.101 sudo ls /var/www/html /$
         def proc = command.execute()
         return proc.text.readLines()
 }
 else if(Environment.equals("Production")){
-    def command = $/ssh centos@192.168.1.102 sudo ls /var/www/html /$
+    def command = $/ssh tech@192.168.1.102 sudo ls /var/www/html /$
         def proc = command.execute()
         return proc.text.readLines()
 }'''
