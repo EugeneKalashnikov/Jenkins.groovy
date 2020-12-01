@@ -1,5 +1,3 @@
-Reactive Parameter ("projectBranchName"):
-
 AUTH = "loginAndPassInBase64"
 GIT_URL = "https://github.com"
 PROJECT = "EugeneKalashnikov/DockerBuilds"
