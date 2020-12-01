@@ -1,15 +1,17 @@
-
-repoName = "DockerBuilds"
-
-def getBranchesFromRepoName(repoName) {
-    def branches = []
-    def endpoint = GIT_URL + "/rest/api/1.0/projects/${PROJECT}/repos/${repoName}/branches"
-    def conn = new URL(endpoint).openConnection()
-    //conn.setRequestProperty("Authorization", "Basic ${AUTH}")
-    def response = new groovy.json.JsonSlurper().parseText(conn.content.text)
-    response.values.each {
-        branches.add(it.displayId)
-    }
-    return branches
+properties([
+    parameters([
+        gitParameter(branch: '',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'master',
+                     description: '',
+                     name: 'BRANCH',
+                     quickFilterEnabled: false,
+                     selectedValue: 'NONE',
+                     sortMode: 'NONE',
+                     tagFilter: '*',
+                     type: 'PT_BRANCH')
+    ])
+])
+node {
+    git branch: "${params.BRANCH}", url: 'https://github.com/jenkinsci/git-parameter-plugin.git'
 }
-return getBranchesFromRepoName(repoName)
