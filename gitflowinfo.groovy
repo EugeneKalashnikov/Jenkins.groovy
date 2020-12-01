@@ -1,11 +1,11 @@
-import com.cloudbees.plugins.flow.*;
- 
-jobs = Jenkins.instance.getAllItems(BuildFlow);
-jobs.each { it ->
-    it.builds.each { b -> 
-        GIT_BRANCH = b.envVars['GIT_BRANCH']
-        ( GIT_BRANCH =~ /(?:refs\/remotes\/)?(.+)/ ).each { full,branch ->
-            b.displayName = branch + ' (#' + b.number + ')'
-        }
+node {
+    // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
+    def server = Artifactory.server "SERVER_ID"
+    // Create an Artifactory Maven instance.
+    def rtMaven = Artifactory.newMavenBuild()
+    def buildInfo
+
+    stage('Clone sources') {
+        git url: 'https://github.com/jfrogdev/project-examples.git'
     }
 }
