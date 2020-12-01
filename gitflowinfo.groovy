@@ -1,4 +1,4 @@
-Reactive Parameter “projectBranchName”):
+Reactive Parameter ("projectBranchName"):
 
 AUTH = "loginAndPassInBase64"
 GIT_URL = "https://github.com"
