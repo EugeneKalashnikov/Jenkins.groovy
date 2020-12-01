@@ -11,7 +11,18 @@ properties([
                      sortMode: 'NONE',
                      tagFilter: '*',
                      useRepository: repourl,
-                     type: 'PT_BRANCH')
+                     type: 'PT_BRANCH'),
+         gitParameter(branch1: '',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'master',
+                     description: '',
+                     name: 'BRANCH',
+                     quickFilterEnabled: false,
+                     selectedValue: 'NONE',
+                     sortMode: 'NONE',
+                     tagFilter: '*',
+                     useRepository: repourl,
+                     type: 'PT_BRANCH')       
     ])
 ])
 node {
