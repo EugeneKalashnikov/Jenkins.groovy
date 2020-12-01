@@ -8,7 +8,6 @@ properties([
       filterable: false,
       name: 'Environment', 
       script: [
-        $class: 'GroovyScript', 
         script: [
           classpath: [], 
           sandbox: false, 
