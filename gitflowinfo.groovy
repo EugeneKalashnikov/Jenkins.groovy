@@ -13,5 +13,5 @@ properties([
     ])
 ])
 node {
-    git branch: "${params.BRANCH}", url: 'https://github.com/jenkinsci/git-parameter-plugin.git'
+    git branch: "${params.BRANCH}", url: 'https://github.com/EugeneKalashnikov/DockerBuilds.git'
 }
