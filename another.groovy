@@ -27,7 +27,7 @@ pipeline {
                           extensions: [], 
                           gitTool: 'Default', 
                           submoduleCfg: [], 
-                          userRemoteConfigs: [[url: 'https://github.com/EugeneKalashnikov/DockerBuilds.git']]]
+                          userRemoteConfigs: [[url: 'https://github.com/EugeneKalashnikov/DockerBuilds.git']]
                         ])
             }
         }
