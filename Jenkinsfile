@@ -3,7 +3,7 @@ properties([
   parameters([
     [$class: 'CascadeChoiceParameter', 
       choiceType: 'PT_SINGLE_SELECT', 
-      description: 'Select environment',
+      description: 'Select branche',
       filterLength: 1,
       filterable: false,
       name: 'Environment', 
@@ -11,7 +11,7 @@ properties([
         $class: 'GroovyScript', 
         script: [
           classpath: [], 
-          sandbox: false, 
+          sandbox: true, 
           script: 
             'return[\"Development\",\"Production\"]'
         ]
