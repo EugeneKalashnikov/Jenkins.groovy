@@ -1,17 +1,15 @@
-pipelineJob('testpipeline-build') {
-	description('Build test docker image, test and push it to local registry')
-	definition {
-    	cpsScm {
-      	scm {
-          git {
-            branch('origin/master')
-            remote {
-              url('git@gitlab-selfhosted.org:test-group/sample-project.git')
-              credentials('gitlab-creds')
-            }
+pipelineJob('job-dsl-plugin') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('https://github.com/jenkinsci/job-dsl-plugin.git')
           }
-      	}
-      	scriptPath('Jenkinsfile')
-    	}
+          branch('*/master')
+        }
+      }
+      lightweight()
     }
+  }
 }
