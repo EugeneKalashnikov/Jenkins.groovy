@@ -1,7 +1,6 @@
-AUTH = "loginAndPassInBase64"
-GIT_URL = "https://github.com"
-PROJECT = "EugeneKalashnikov/DockerBuilds"
- 
+
+repoName = "DockerBuilds"
+
 def getBranchesFromRepoName(repoName) {
     def branches = []
     def endpoint = GIT_URL + "/rest/api/1.0/projects/${PROJECT}/repos/${repoName}/branches"
