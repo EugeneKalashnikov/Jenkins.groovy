@@ -6,6 +6,7 @@ properties([
                      defaultValue: 'master',
                      description: '',
                      name: 'BRANCH',
+                     visible: false,
                      quickFilterEnabled: false,
                      selectedValue: 'NONE',
                      sortMode: 'NONE',
