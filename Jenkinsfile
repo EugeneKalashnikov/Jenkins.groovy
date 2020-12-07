@@ -47,6 +47,7 @@ else if(Environment.equals("Production")){
         choiceType: 'PT_SINGLE_SELECT', 
         description: 'Select Folder. \'.\' - Remove all site folder',
         filterLength: 1,
+        visible: false,
         filterable: false,
         referencedParameters: 'Environment, Site',
         name: 'Folder', 
